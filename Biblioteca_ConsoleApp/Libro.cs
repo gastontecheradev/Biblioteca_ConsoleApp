@@ -3,40 +3,34 @@
     public class Libro : ILibro
     {
         // Atributos
-        private string titulo;
-        private string categoria;
-        private int indice;
-        private bool disponible;
+        public string Titulo { get; set; }
+        public string Categoria { get; set; }
+        public int Indice { get; set; }
 
         // Metodos
         public void MostrarInfo()
         {
-            Console.WriteLine("Titulo: " + titulo);
-            Console.WriteLine("Categoria: " + categoria);
-            Console.WriteLine("Indice: " + indice);
-
-            if (disponible)
-            {
-                Console.WriteLine("Está disponible");
-            }
-            else
-            {
-                Console.WriteLine("No está disponible");
-            }
+            Console.WriteLine("Titulo: " + Titulo);
+            Console.WriteLine("Categoria: " + Categoria);
+            Console.WriteLine("Indice: " + Indice);
         }
 
         public void MostrarTitulo()
         {
-            Console.WriteLine(titulo);
+            Console.WriteLine(Titulo);
         }
 
-        // Constructor
-        public Libro(string elTitulo, string laCategoria, int elIndice, bool estadoDisponible)
+        // Constructores
+        public Libro()
         {
-            titulo = elTitulo;
-            categoria = laCategoria;
-            indice = elIndice;
-            disponible = estadoDisponible;
+        }
+
+        public Libro(string elTitulo, string laCategoria, int elIndice/*, bool estadoDisponible*/)
+        {
+            Titulo = elTitulo;
+            Categoria = laCategoria;
+            Indice = elIndice;
+            //Disponible = estadoDisponible;
         }
     }
 

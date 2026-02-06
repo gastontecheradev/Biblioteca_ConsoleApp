@@ -6,9 +6,9 @@ public  class Program
 {
     public static void Main()
     {
-        Libro Metafisica = new Libro("Metafisica", "Filosofia", 1, true);
-        Libro Renacimiento = new Libro("Renacimiento", "Historia", 2, true);
-        Libro Barroco = new Libro("Metafisica", "Música", 3, true);
+        Libro Metafisica = new Libro("Metafisica", "Filosofia", 1);
+        Libro Renacimiento = new Libro("Renacimiento", "Historia", 2);
+        Libro Barroco = new Libro("Metafisica", "Música", 3);
 
         LinkedList<Libro> listaLibros = new LinkedList<Libro>();
 
@@ -47,28 +47,17 @@ public  class Program
                     }
                     break;
                 case 2:
+                    Libro libroIngresado = new Libro();
+                    listaLibros.AddLast(libroIngresado);
+
                     Console.Write("Ingrese el título del libro: \n");
-                    string nombreIngresado = Console.ReadLine();
+                    libroIngresado.Titulo = Console.ReadLine();
 
                     Console.Write("Ingrese el género del libro: \n");
-                    string generoIngresado = Console.ReadLine();
+                    libroIngresado.Categoria = Console.ReadLine();
 
                     Console.Write("Ingrese el índice del libro: \n");
-                    int indiceIngresado = Convert.ToInt32(Console.ReadLine());
-
-                    Console.Write("Indique si el libro está disponible (si / no): \n");
-                    string disponibleString = Console.ReadLine();
-
-                    bool disponibleBool = false;
-
-                    if (disponibleString == "si")
-                    {
-                        disponibleBool = true;
-                    }
-
-                    Libro libroIngresado = new Libro(nombreIngresado, generoIngresado, indiceIngresado, disponibleBool);
-
-                    listaLibros.AddLast(libroIngresado);
+                    libroIngresado.Indice = Convert.ToInt32(Console.ReadLine());
                     break;
                 case 3:
                     Console.WriteLine();
@@ -76,8 +65,6 @@ public  class Program
                 case 4:
                     Console.WriteLine();
                     break;
-
-
             }
 
             
